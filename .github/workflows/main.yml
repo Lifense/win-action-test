@@ -25,4 +25,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install vpn
-        run: ls .\VPN
+        run: .\VPN\ovpnconnector.exe install
