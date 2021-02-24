@@ -25,4 +25,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install vpn
-        run: choco install openvpn
+        run: choco install openvpn --params "'/SELECT_SERVICE=1 /SELECT_OPENVPN=0 /SELECT_OPENVPNGUI=0 /SELECT_TAP=0 /SELECT_EASYRSA=0 /SELECT_OPENSSLDLLS=0 /SELECT_LZODLLS=0 /SELECT_PKCS11DLLS=0 /SELECT_OPENSSL_UTILITIES=0 /SELECT_PATH=0 /SELECT_SHORTCUTS=0 /SELECT_ASSOCIATIONS=0 /SELECT_LAUNCH=0'"
