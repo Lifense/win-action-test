@@ -1,0 +1,5 @@
+Fri Feb 19 01:06:23 2021 OpenVPN Connect Helper Service v0.1.0 built on Oct 27 2020 12:50:49
+Fri Feb 19 01:06:23 2021 HTTP Listen: http-listen \\.\pipe\ovpn-connect-helper-service NamedPipe 4 !ssl
+Fri Feb 19 01:06:23 2021 HTTP Listen: http-listen \\.\pipe\ovpn-connect-helper-service NamedPipe 4 !ssl
+Fri Feb 19 01:06:23 2021 HTTP Listen: http-listen \\.\pipe\ovpn-connect-helper-service NamedPipe 4 !ssl
+Fri Feb 19 01:06:23 2021 HTTP Listen: http-listen \\.\pipe\ovpn-connect-helper-service NamedPipe 4 !ssl

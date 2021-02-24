@@ -1,0 +1,125 @@
+Tue Feb 23 15:25:06 2021 OpenVPN core 3.git::662eae9a win x86_64 64-bit
+Tue Feb 23 15:25:06 2021 Frame=512/2048/512 mssfix-ctrl=1250
+Tue Feb 23 15:25:06 2021 UNUSED OPTIONS
+2 [explicit-exit-notify] 
+5 [resolv-retry] [infinite] 
+6 [nobind] 
+7 [persist-key] 
+8 [persist-tun] 
+10 [verify-x509-name] [server_XiMj1f0fhKRGvzEP] [name] 
+12 [auth-nocache] 
+14 [tls-client] 
+16 [tls-cipher] [TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256] 
+17 [ignore-unknown-option] [block-outside-dns] 
+18 [block-outside-dns] 
+19 [verb] [3] 
+Tue Feb 23 15:25:06 2021 EVENT: RESOLVE
+Tue Feb 23 15:25:06 2021 Contacting 13.233.203.171:1194 via UDP
+Tue Feb 23 15:25:06 2021 EVENT: WAIT
+Tue Feb 23 15:25:06 2021 Connecting to [13.233.203.171]:1194 (13.233.203.171) via UDPv4
+Tue Feb 23 15:25:06 2021 EVENT: CONNECTING
+Tue Feb 23 15:25:06 2021 Tunnel Options:V4,dev-type tun,link-mtu 1521,tun-mtu 1500,proto UDPv4,cipher AES-128-GCM,auth [null-digest],keysize 128,key-method 2,tls-client
+Tue Feb 23 15:25:06 2021 Creds: UsernameEmpty/PasswordEmpty
+Tue Feb 23 15:25:06 2021 Peer Info:
+IV_VER=3.git::662eae9a
+IV_PLAT=win
+IV_NCP=2
+IV_TCPNL=1
+IV_PROTO=2
+IV_AUTO_SESS=1
+IV_GUI_VER=ovpnconnect_service 1.0
+
+Tue Feb 23 15:25:06 2021 VERIFY OK: depth=0, /CN=server_XiMj1f0fhKRGvzEP
+Tue Feb 23 15:25:06 2021 SSL Handshake: CN=server_XiMj1f0fhKRGvzEP, TLSv1.3, cipher TLSv1.3 TLS_AES_256_GCM_SHA384
+Tue Feb 23 15:25:06 2021 Session is ACTIVE
+Tue Feb 23 15:25:06 2021 EVENT: GET_CONFIG
+Tue Feb 23 15:25:06 2021 Sending PUSH_REQUEST to server...
+Tue Feb 23 15:25:06 2021 OPTIONS:
+0 [dhcp-option] [DNS] [1.0.0.1] 
+1 [dhcp-option] [DNS] [1.1.1.1] 
+2 [redirect-gateway] [def1] [bypass-dhcp] 
+3 [route-gateway] [10.8.0.1] 
+4 [topology] [subnet] 
+5 [ping] [10] 
+6 [ping-restart] [120] 
+7 [ifconfig] [10.8.0.2] [255.255.255.0] 
+8 [peer-id] [0] 
+9 [cipher] [AES-128-GCM] 
+
+Tue Feb 23 15:25:06 2021 PROTOCOL OPTIONS:
+  cipher: AES-128-GCM
+  digest: NONE
+  compress: NONE
+  peer ID: 0
+Tue Feb 23 15:25:06 2021 EVENT: ASSIGN_IP
+Tue Feb 23 15:25:06 2021 CAPTURED OPTIONS:
+Session Name: 13.233.203.171
+Layer: OSI_LAYER_3
+Remote Address: 13.233.203.171
+Tunnel Addresses:
+  10.8.0.2/24 -> 10.8.0.1
+Reroute Gateway: IPv4=1 IPv6=0 flags=[ ENABLE REROUTE_GW DEF1 BYPASS_DHCP IPv4 ]
+Block IPv6: no
+Add Routes:
+Exclude Routes:
+DNS Servers:
+  1.0.0.1
+  1.1.1.1
+Search Domains:
+
+Tue Feb 23 15:25:06 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 13.233.203.171
+Tue Feb 23 15:25:06 2021 proxy_auto_config_url 
+Tue Feb 23 15:25:07 2021 TAP ADAPTERS:
+guid='{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}' index=5 name='Local Area Connection'
+
+Open TAP device "Local Area Connection" PATH="\\.\Global\{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}.tap" SUCCEEDED
+TAP-Windows Driver Version 9.24
+ActionDeleteAllRoutesOnInterface iface_index=5
+netsh interface ip set interface 5 metric=1
+Ok.
+
+netsh interface ip set address 5 static 10.8.0.2 255.255.255.0 gateway=10.8.0.1 store=active
+
+netsh interface ip add route 13.233.203.171/32 7 192.168.0.1 store=active
+Ok.
+
+netsh interface ip add route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip add route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip set dnsservers 5 static 1.0.0.1 register=primary validate=no
+
+netsh interface ip add dnsservers 5 1.1.1.1 2 validate=no
+
+NRPT::ActionCreate names=[.] dns_servers=[1.0.0.1,1.1.1.1]
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\ovpnconnector.exe tap_index=5 enable=1
+permit IPv4 DNS requests from OpenVPN app
+permit IPv6 DNS requests from OpenVPN app
+block IPv4 DNS requests from other apps
+block IPv6 DNS requests from other apps
+allow IPv4 traffic from TAP
+allow IPv6 traffic from TAP
+ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+Tue Feb 23 15:25:07 2021 TunPersist: saving tun context:
+Session Name: 13.233.203.171
+Layer: OSI_LAYER_3
+Remote Address: 13.233.203.171
+Tunnel Addresses:
+  10.8.0.2/24 -> 10.8.0.1
+Reroute Gateway: IPv4=1 IPv6=0 flags=[ ENABLE REROUTE_GW DEF1 BYPASS_DHCP IPv4 ]
+Block IPv6: no
+Add Routes:
+Exclude Routes:
+DNS Servers:
+  1.0.0.1
+  1.1.1.1
+Search Domains:
+
+Tue Feb 23 15:25:07 2021 Connected via TUN_WIN
+Tue Feb 23 15:25:07 2021 EVENT: CONNECTED 13.233.203.171:1194 (13.233.203.171) via /UDPv4 on TUN_WIN/10.8.0.2/ gw=[10.8.0.1/]

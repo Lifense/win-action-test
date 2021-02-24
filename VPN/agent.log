@@ -1,0 +1,600 @@
+Fri Feb 19 01:06:22 2021 OpenVPN Agent 0.1.0 [OpenSSL] built on Oct 27 2020 12:50:20
+Fri Feb 19 01:06:22 2021 HTTP Listen: http-listen \\.\pipe\agent_ovpnconnect NamedPipe 4 !ssl
+Fri Feb 19 01:06:22 2021 HTTP Listen: http-listen \\.\pipe\agent_ovpnconnect NamedPipe 4 !ssl
+Fri Feb 19 01:06:22 2021 HTTP Listen: http-listen \\.\pipe\agent_ovpnconnect NamedPipe 4 !ssl
+Fri Feb 19 01:06:22 2021 HTTP Listen: http-listen \\.\pipe\agent_ovpnconnect NamedPipe 4 !ssl
+Sat Feb 20 15:32:04 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Sat Feb 20 15:32:04 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/add-bypass-route
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=48
+[3] Accept=*/*
+
+Sat Feb 20 15:32:04 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Sat Feb 20 15:32:04 2021 netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+
+Sat Feb 20 15:32:06 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Sat Feb 20 15:32:06 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/tun-setup
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=827
+[3] Accept=*/*
+
+Sat Feb 20 15:32:06 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Sat Feb 20 15:32:06 2021 proxy_auto_config_url 
+Sat Feb 20 15:32:08 2021 TUN SETUP
+TAP ADAPTERS:
+guid='{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}' index=5 name='Local Area Connection'
+Open TAP device "Local Area Connection" PATH="\\.\Global\{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}.tap" SUCCEEDED
+TAP-Windows Driver Version 9.24
+ActionDeleteAllRoutesOnInterface iface_index=5
+netsh interface ip set interface 5 metric=1
+Ok.
+netsh interface ip set address 5 static 10.8.0.2 255.255.255.0 gateway=10.8.0.1 store=active
+netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+The object already exists.
+netsh interface ip add route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip add route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip set dnsservers 5 static 8.8.8.8 register=primary validate=no
+netsh interface ip add dnsservers 5 8.8.4.4 2 validate=no
+NRPT::ActionCreate names=[.] dns_servers=[8.8.8.8,8.8.4.4]
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=1
+permit IPv4 DNS requests from OpenVPN app
+permit IPv6 DNS requests from OpenVPN app
+block IPv4 DNS requests from other apps
+block IPv6 DNS requests from other apps
+allow IPv4 traffic from TAP
+allow IPv6 traffic from TAP
+ipconfig /flushdns
+Windows IP Configuration
+Successfully flushed the DNS Resolver Cache.
+Sat Feb 20 15:32:08 2021 TUN CONFIRM
+Sat Feb 20 16:46:07 2021 remove bypass route (event)
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+Sat Feb 20 16:46:08 2021 TUN CLOSE (event)
+netsh interface ip delete address 5 10.8.0.2 gateway=all store=active
+
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Element not found.
+
+
+netsh interface ip delete route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete dnsservers 5 all validate=no
+
+NRPT::ActionDelete
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=0
+WFPEngine closed
+ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+Sun Feb 21 13:44:34 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Sun Feb 21 13:44:34 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/add-bypass-route
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=48
+[3] Accept=*/*
+
+Sun Feb 21 13:44:34 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Sun Feb 21 13:44:34 2021 netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+
+Sun Feb 21 13:44:35 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Sun Feb 21 13:44:35 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/tun-setup
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=827
+[3] Accept=*/*
+
+Sun Feb 21 13:44:35 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Sun Feb 21 13:44:35 2021 proxy_auto_config_url 
+Sun Feb 21 13:44:37 2021 TUN SETUP
+TAP ADAPTERS:
+guid='{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}' index=5 name='Local Area Connection'
+Open TAP device "Local Area Connection" PATH="\\.\Global\{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}.tap" SUCCEEDED
+TAP-Windows Driver Version 9.24
+ActionDeleteAllRoutesOnInterface iface_index=5
+netsh interface ip set interface 5 metric=1
+Ok.
+netsh interface ip set address 5 static 10.8.0.2 255.255.255.0 gateway=10.8.0.1 store=active
+netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+The object already exists.
+netsh interface ip add route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip add route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip set dnsservers 5 static 8.8.8.8 register=primary validate=no
+netsh interface ip add dnsservers 5 8.8.4.4 2 validate=no
+NRPT::ActionCreate names=[.] dns_servers=[8.8.8.8,8.8.4.4]
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=1
+permit IPv4 DNS requests from OpenVPN app
+permit IPv6 DNS requests from OpenVPN app
+block IPv4 DNS requests from other apps
+block IPv6 DNS requests from other apps
+allow IPv4 traffic from TAP
+allow IPv6 traffic from TAP
+ipconfig /flushdns
+Windows IP Configuration
+Successfully flushed the DNS Resolver Cache.
+Sun Feb 21 13:44:37 2021 TUN CONFIRM
+Mon Feb 22 11:36:27 2021 remove bypass route (event)
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+Mon Feb 22 11:36:31 2021 TUN CLOSE (event)
+netsh interface ip delete address 5 10.8.0.2 gateway=all store=active
+
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Element not found.
+
+
+netsh interface ip delete route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete dnsservers 5 all validate=no
+
+NRPT::ActionDelete
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=0
+WFPEngine closed
+ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+Mon Feb 22 11:36:31 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Mon Feb 22 11:36:31 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/add-bypass-route
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=48
+[3] Accept=*/*
+
+Mon Feb 22 11:36:31 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Mon Feb 22 11:36:32 2021 netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+
+Mon Feb 22 11:36:33 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Mon Feb 22 11:36:33 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/tun-setup
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=827
+[3] Accept=*/*
+
+Mon Feb 22 11:36:33 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Mon Feb 22 11:36:33 2021 proxy_auto_config_url 
+Mon Feb 22 11:36:37 2021 TUN SETUP
+TAP ADAPTERS:
+guid='{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}' index=5 name='Local Area Connection'
+Open TAP device "Local Area Connection" PATH="\\.\Global\{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}.tap" SUCCEEDED
+TAP-Windows Driver Version 9.24
+ActionDeleteAllRoutesOnInterface iface_index=5
+netsh interface ip set interface 5 metric=1
+Ok.
+netsh interface ip set address 5 static 10.8.0.2 255.255.255.0 gateway=10.8.0.1 store=active
+netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+The object already exists.
+netsh interface ip add route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip add route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip set dnsservers 5 static 8.8.8.8 register=primary validate=no
+netsh interface ip add dnsservers 5 8.8.4.4 2 validate=no
+NRPT::ActionCreate names=[.] dns_servers=[8.8.8.8,8.8.4.4]
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=1
+permit IPv4 DNS requests from OpenVPN app
+permit IPv6 DNS requests from OpenVPN app
+block IPv4 DNS requests from other apps
+block IPv6 DNS requests from other apps
+allow IPv4 traffic from TAP
+allow IPv6 traffic from TAP
+ipconfig /flushdns
+Windows IP Configuration
+Successfully flushed the DNS Resolver Cache.
+Mon Feb 22 11:36:37 2021 TUN CONFIRM
+Mon Feb 22 11:52:28 2021 remove bypass route (event)
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+Mon Feb 22 11:52:28 2021 TUN CLOSE (event)
+netsh interface ip delete address 5 10.8.0.2 gateway=all store=active
+
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Element not found.
+
+
+netsh interface ip delete route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete dnsservers 5 all validate=no
+
+NRPT::ActionDelete
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=0
+WFPEngine closed
+ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+Mon Feb 22 23:05:02 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Mon Feb 22 23:05:02 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/add-bypass-route
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=48
+[3] Accept=*/*
+
+Mon Feb 22 23:05:02 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Mon Feb 22 23:05:02 2021 netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+
+Mon Feb 22 23:05:03 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Mon Feb 22 23:05:03 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/tun-setup
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=827
+[3] Accept=*/*
+
+Mon Feb 22 23:05:03 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Mon Feb 22 23:05:03 2021 proxy_auto_config_url 
+Mon Feb 22 23:05:05 2021 TUN SETUP
+TAP ADAPTERS:
+guid='{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}' index=5 name='Local Area Connection'
+Open TAP device "Local Area Connection" PATH="\\.\Global\{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}.tap" SUCCEEDED
+TAP-Windows Driver Version 9.24
+ActionDeleteAllRoutesOnInterface iface_index=5
+netsh interface ip set interface 5 metric=1
+Ok.
+netsh interface ip set address 5 static 10.8.0.2 255.255.255.0 gateway=10.8.0.1 store=active
+netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+The object already exists.
+netsh interface ip add route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip add route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip set dnsservers 5 static 8.8.8.8 register=primary validate=no
+netsh interface ip add dnsservers 5 8.8.4.4 2 validate=no
+NRPT::ActionCreate names=[.] dns_servers=[8.8.8.8,8.8.4.4]
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=1
+permit IPv4 DNS requests from OpenVPN app
+permit IPv6 DNS requests from OpenVPN app
+block IPv4 DNS requests from other apps
+block IPv6 DNS requests from other apps
+allow IPv4 traffic from TAP
+allow IPv6 traffic from TAP
+ipconfig /flushdns
+Windows IP Configuration
+Successfully flushed the DNS Resolver Cache.
+Mon Feb 22 23:05:05 2021 TUN CONFIRM
+Mon Feb 22 23:05:07 2021 remove bypass route (event)
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+Mon Feb 22 23:05:09 2021 TUN CLOSE (event)
+netsh interface ip delete address 5 10.8.0.2 gateway=all store=active
+
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Element not found.
+
+
+netsh interface ip delete route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete dnsservers 5 all validate=no
+
+NRPT::ActionDelete
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=0
+WFPEngine closed
+ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+Tue Feb 23 12:07:48 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Tue Feb 23 12:07:48 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/add-bypass-route
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=48
+[3] Accept=*/*
+
+Tue Feb 23 12:07:48 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 13.233.203.171
+Tue Feb 23 12:07:48 2021 netsh interface ip add route 13.233.203.171/32 7 192.168.0.1 store=active
+Ok.
+
+
+Tue Feb 23 12:07:48 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Tue Feb 23 12:07:48 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/tun-setup
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=827
+[3] Accept=*/*
+
+Tue Feb 23 12:07:48 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 13.233.203.171
+Tue Feb 23 12:07:48 2021 proxy_auto_config_url 
+Tue Feb 23 12:07:50 2021 TUN SETUP
+TAP ADAPTERS:
+guid='{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}' index=5 name='Local Area Connection'
+Open TAP device "Local Area Connection" PATH="\\.\Global\{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}.tap" SUCCEEDED
+TAP-Windows Driver Version 9.24
+ActionDeleteAllRoutesOnInterface iface_index=5
+netsh interface ip set interface 5 metric=1
+Ok.
+netsh interface ip set address 5 static 10.8.0.2 255.255.255.0 gateway=10.8.0.1 store=active
+netsh interface ip add route 13.233.203.171/32 7 192.168.0.1 store=active
+The object already exists.
+netsh interface ip add route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip add route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip set dnsservers 5 static 1.0.0.1 register=primary validate=no
+netsh interface ip add dnsservers 5 1.1.1.1 2 validate=no
+NRPT::ActionCreate names=[.] dns_servers=[1.0.0.1,1.1.1.1]
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=1
+permit IPv4 DNS requests from OpenVPN app
+permit IPv6 DNS requests from OpenVPN app
+block IPv4 DNS requests from other apps
+block IPv6 DNS requests from other apps
+allow IPv4 traffic from TAP
+allow IPv6 traffic from TAP
+ipconfig /flushdns
+Windows IP Configuration
+Successfully flushed the DNS Resolver Cache.
+Tue Feb 23 12:07:50 2021 TUN CONFIRM
+Tue Feb 23 12:25:38 2021 remove bypass route (event)
+netsh interface ip delete route 13.233.203.171/32 7 192.168.0.1 store=active
+Ok.
+
+Tue Feb 23 12:25:39 2021 TUN CLOSE (event)
+netsh interface ip delete address 5 10.8.0.2 gateway=all store=active
+
+netsh interface ip delete route 13.233.203.171/32 7 192.168.0.1 store=active
+Element not found.
+
+
+netsh interface ip delete route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete dnsservers 5 all validate=no
+
+NRPT::ActionDelete
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=0
+WFPEngine closed
+ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+Tue Feb 23 14:50:00 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Tue Feb 23 14:50:00 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/add-bypass-route
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=48
+[3] Accept=*/*
+
+Tue Feb 23 14:50:00 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 13.233.203.171
+Tue Feb 23 14:50:00 2021 netsh interface ip add route 13.233.203.171/32 7 192.168.0.1 store=active
+Ok.
+
+
+Tue Feb 23 14:50:01 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Tue Feb 23 14:50:01 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/tun-setup
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=827
+[3] Accept=*/*
+
+Tue Feb 23 14:50:01 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 13.233.203.171
+Tue Feb 23 14:50:01 2021 proxy_auto_config_url 
+Tue Feb 23 14:50:02 2021 TUN SETUP
+TAP ADAPTERS:
+guid='{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}' index=5 name='Local Area Connection'
+Open TAP device "Local Area Connection" PATH="\\.\Global\{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}.tap" SUCCEEDED
+TAP-Windows Driver Version 9.24
+ActionDeleteAllRoutesOnInterface iface_index=5
+netsh interface ip set interface 5 metric=1
+Ok.
+netsh interface ip set address 5 static 10.8.0.2 255.255.255.0 gateway=10.8.0.1 store=active
+netsh interface ip add route 13.233.203.171/32 7 192.168.0.1 store=active
+The object already exists.
+netsh interface ip add route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip add route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip set dnsservers 5 static 1.0.0.1 register=primary validate=no
+netsh interface ip add dnsservers 5 1.1.1.1 2 validate=no
+NRPT::ActionCreate names=[.] dns_servers=[1.0.0.1,1.1.1.1]
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=1
+permit IPv4 DNS requests from OpenVPN app
+permit IPv6 DNS requests from OpenVPN app
+block IPv4 DNS requests from other apps
+block IPv6 DNS requests from other apps
+allow IPv4 traffic from TAP
+allow IPv6 traffic from TAP
+ipconfig /flushdns
+Windows IP Configuration
+Successfully flushed the DNS Resolver Cache.
+Tue Feb 23 14:50:02 2021 TUN CONFIRM
+Tue Feb 23 14:53:42 2021 remove bypass route (event)
+netsh interface ip delete route 13.233.203.171/32 7 192.168.0.1 store=active
+Ok.
+
+Tue Feb 23 14:53:43 2021 TUN CLOSE (event)
+netsh interface ip delete address 5 10.8.0.2 gateway=all store=active
+
+netsh interface ip delete route 13.233.203.171/32 7 192.168.0.1 store=active
+Element not found.
+
+
+netsh interface ip delete route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete dnsservers 5 all validate=no
+
+NRPT::ActionDelete
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=0
+WFPEngine closed
+ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+Tue Feb 23 21:41:11 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Tue Feb 23 21:41:11 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/add-bypass-route
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=48
+[3] Accept=*/*
+
+Tue Feb 23 21:41:11 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Tue Feb 23 21:41:11 2021 netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+
+Tue Feb 23 21:41:12 2021 connection from C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe
+Tue Feb 23 21:41:12 2021 HTTP request received from NAMED_PIPE
+HTTP Request
+method=POST
+uri=/tun-setup
+version=1/1
+[0] Host=\\.\pipe\agent_ovpnconnect
+[1] Content-Type=application/json
+[2] Content-Length=827
+[3] Accept=*/*
+
+Tue Feb 23 21:41:12 2021 GetBestGateway: selected gateway 192.168.0.1 on adapter 7 for destination 35.173.185.164
+Tue Feb 23 21:41:12 2021 proxy_auto_config_url 
+Tue Feb 23 21:41:15 2021 TUN SETUP
+TAP ADAPTERS:
+guid='{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}' index=5 name='Local Area Connection'
+Open TAP device "Local Area Connection" PATH="\\.\Global\{0A225FF3-4934-417D-B01F-DEDB5E2F5A41}.tap" SUCCEEDED
+TAP-Windows Driver Version 9.24
+ActionDeleteAllRoutesOnInterface iface_index=5
+netsh interface ip set interface 5 metric=1
+Ok.
+netsh interface ip set address 5 static 10.8.0.2 255.255.255.0 gateway=10.8.0.1 store=active
+netsh interface ip add route 35.173.185.164/32 7 192.168.0.1 store=active
+The object already exists.
+netsh interface ip add route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip add route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+netsh interface ip set dnsservers 5 static 8.8.8.8 register=primary validate=no
+netsh interface ip add dnsservers 5 8.8.4.4 2 validate=no
+NRPT::ActionCreate names=[.] dns_servers=[8.8.8.8,8.8.4.4]
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=1
+permit IPv4 DNS requests from OpenVPN app
+permit IPv6 DNS requests from OpenVPN app
+block IPv4 DNS requests from other apps
+block IPv6 DNS requests from other apps
+allow IPv4 traffic from TAP
+allow IPv6 traffic from TAP
+ipconfig /flushdns
+Windows IP Configuration
+Successfully flushed the DNS Resolver Cache.
+Tue Feb 23 21:41:15 2021 TUN CONFIRM
+Tue Feb 23 22:10:53 2021 remove bypass route (event)
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Ok.
+
+Tue Feb 23 22:10:54 2021 TUN CLOSE (event)
+netsh interface ip delete address 5 10.8.0.2 gateway=all store=active
+
+netsh interface ip delete route 35.173.185.164/32 7 192.168.0.1 store=active
+Element not found.
+
+
+netsh interface ip delete route 0.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete route 128.0.0.0/1 5 10.8.0.1 store=active
+Ok.
+
+netsh interface ip delete dnsservers 5 all validate=no
+
+NRPT::ActionDelete
+ActionWFP openvpn_app_path=C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe tap_index=5 enable=0
+WFPEngine closed
+ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
